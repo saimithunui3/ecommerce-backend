@@ -13,10 +13,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://ecommerce-frontend-nine-omega.vercel.app") // Or your new Vercel link
+                        .allowedOriginPatterns("*")  // <--- IMPORTANT CHANGE
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true);
+                        .allowCredentials(true); // Optional: only if you're using cookies or auth headers
             }
         };
     }
